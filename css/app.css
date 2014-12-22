@@ -1,0 +1,148 @@
+header{
+margin-bottom:20px;
+}
+div.topVan{
+padding:0px 20px 0px 20px;
+margin:-20px 0px 0px 0px;
+}
+input{
+    padding:1% 0.5% 1% 0.5%;
+}
+
+input.ui-spinner-input{
+    width:100%;
+    max-width:100px;
+    min-width:100px;
+    text-align:center;
+}
+
+@media only screen and (max-width: 600px) {
+a.ui-spinner-button{
+width:45px;
+}
+
+input.ui-spinner-input{
+    width:80%;
+    text-align:center;
+	font-size:20px!important;
+	line-height:42px!important;
+	
+    max-width:100%!important;
+	height:42px!important;
+}
+}
+.address input,ui-input-text{
+    max-width:88%;
+    margin:0 auto;
+    
+}
+.address .ui-shadow-inset,.address .ui-input-text, .ui-input-search{
+    -webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,.0);
+    -moz-box-shadow: inset 0 0px 0px rgba(0,0,0,.0);
+    box-shadow: inset 0 0px 0px rgba(0,0,0,.0);
+	border-style:none;
+	
+
+}
+div.navMargin{
+	 top:1.5em;
+}
+.active h1{
+font-size:1.7em;
+}
+span.ui-corner-all{
+    
+    border-radius:2px;
+}
+#boxSize label{
+    font-weight:bold;
+}
+#boxSize img{
+    width:40px;
+}
+img#sizeImgBigger{
+    width:50px;
+}
+small.error{display:none}
+.column{
+padding:10px;
+}
+/*large screens*/
+#submitBar h4{
+text-align:center;
+}
+.logo{
+
+display: block;
+left: 6.32%;
+margin-left: 18px;
+margin-top: 10px;
+width: 220px;
+height: 50px;
+background-image: url('../img/logo.png');
+background-position: 0 0;
+background-repeat: no-repeat;
+background-size: 100%;
+z-index: 8;
+}
+.padding10{
+padding:10px;
+}
+.padding30{
+padding:30px;
+}
+h2.mediumText{
+font-size:220%;
+}
+#afterQuote{display:none}
+@media only screen and (min-width: 1024px) and (max-width: 5000px) {
+      
+	 /*  #submitBar{
+       position:fixed;
+	   right:5em;
+	   top:5em;
+	   padding:6em;
+	   }*/
+}
+footer.footer{
+       
+       margin:20px;
+	   padding:20px;
+       border-top: 1px solid #000;
+       text-align:center
+}
+.poweredBy{
+       color:#012;
+       font-size:13px;
+	   width:100%;
+	   text-align:right;
+}
+.contact_results{
+       font-size:38px;
+
+}
+.ui-field-contain label{
+       width:100%;
+       margin-bottom:10px;
+	   text-align:left;
+}
+.ui-radio input{position:relative!important}
+div.ui-field-contain input.quoteFields{
+       text-align: center; 
+	   width: 35px!important;
+	   height:35px!important;
+	   border:0px;
+	   padding:0px;
+	   margin: 0 0 0 0
+}
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper{
+background:#fff;
+}
+.top-bar ul li a:visited{
+       color:#FFF!important;
+}
+.ui-mobile fieldset{
+    border:1px solid #cccccc!important;
+	text-align:center;
+	padding:5px;
+}

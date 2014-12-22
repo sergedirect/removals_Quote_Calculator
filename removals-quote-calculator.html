@@ -1,0 +1,466 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <title>Removals Quote Calculator</title>
+	<meta name="description" content="Can you click a mouse? Use our quote calculator to get quick quote in seconds. The easiest quote calculator for man with a van and removals services.">
+	
+    <script src="js/vendor/jquery.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
+	<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/jquery.mousewheel.min.js"></script>
+
+
+    <link rel="stylesheet" href="css/foundation.css" />
+    
+    <link rel="stylesheet" href="css/app.css"  media="all"/>
+
+</head>
+<body>
+<header id="scrollUp">
+    <div class="row clearfix ">
+      <div class="large-6 medium-6 small-6 column">
+	     <div class="logo" style="left: 134.90625px;"></div>
+	  </div>
+      <div class="large-6 medium-6 hide-for-medium-down column" style="text-align:right;padding-top:30px">
+	      <div class="right topVan" style="">
+		          <img src="img/small-van.png" alt="Small removals van" title="small removals van">
+		  </div>
+		  <div class="right topVan" style="">
+		          <img src="img/large-van.png" al="Large removals van" title="large removals van">
+		  </div>
+	  </div>
+    </div>
+    <div class="contain-to-grid navMargin">	
+<nav class="top-bar" data-topbar="" role="navigation">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name show-for-medium-up">
+      <h1><a href="#">Removals Quote Calculator</a></h1>
+    </li>
+	<li class="name show-for-small-only">
+	 <a href="tel:07827 019139"><img src="img/phone.png" alt="" style="width:40px;margin-left:30px"></a>
+	</li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href=""><span>Menu</span></a></li>
+	
+  </ul>
+
+  
+<section class="top-bar-section">
+    <ul class="left">
+	
+      <li class="divider"></li>
+      <li class=""><a href="./index.html" title="Man and Van Edinburgh Home Page">Home</a></li>
+
+      
+      <li class="divider"></li>
+	  <li class=""><a href="./contact.html" title="Man and Van Edinburgh Contact Page">Contact Us</a></li>
+
+      
+      <li class="divider"></li>
+    </ul>
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="divider"></li>
+      <li><a href="removals-quote-calculator.html" title="Removals Quote Calculator">Quote Calculator</a></li>
+    </ul>
+  </section>
+  </nav>
+    </div>
+</header>
+   
+ <div class="row">
+                
+                <div class="large-9 medium-12 columns" id="afterQuote">
+				       <div class="" id="contact_form">
+                             <div id="contact_results"></div>
+                                
+							 <form id="quoteSubmitForm"> 
+							    <div id="contact_body">
+								  
+                             <h2 class="">Submit Quote <button id="goBack" class="right button [secondary success alert]">Go Back</button></h2>
+                                       <label><span>Name <span class="required">*</span></span>
+                                        <input type="text" name="name" id="name" required="true" class="input-field"/>
+                                       </label>
+                                       <label><span>Email <span class="required">*</span></span>
+                                        <input type="email" name="email" required="true" class="input-field" id="email"/>
+                                       </label>
+                                       <label><span>Phone</span>
+                                        <input type="text" name="phone" placeholder="Phone Number" maxlength="20"  required="true" class="tel-number-field long" />      </label>
+                                       </label>
+                                       <label for="field5"><span>Message <span class="required">*</span></span>
+                                       <textarea name="message" id="message" class="textarea-field" required="true"></textarea>
+                                       </label>
+									   
+									  
+				                  
+									 
+                                       <label>
+                                       <span>&nbsp;</span>
+                                       </label>
+			                   	</div>
+						      </form>
+							  <button id="submit_btn"  class="button" value="" >Submit</button>
+						   </div>
+				</div>
+                <div class="large-9 medium-12 columns beforeQuote">
+        
+                    <h2>Quote form  <a  class="right button [secondary success alert] submitQuotes" style="display:none">Submit Quote</a></h2>
+                    <div id="quoteFields">
+   
+                        <form id="quoteForm">
+                               <fieldset>
+   
+                                      <legend><h4>From / Where</h4></legend>
+   
+                                 <div class="row address name-field">
+                                         <div class="large-6 medium-6 column">
+                                                 <input name="address1" id="address1" type="text" placeholder="Address or Postcode" class="address" >
+                                         </div>
+                                         <div class="large-6 medium-6 column">
+                                                 <input name="address2" id="address2" type="text" placeholder="Address or Postcode" class="address">          
+                                         </div>
+                                 </div>
+                              	 <div id="gApiError" style="color:red"></div>
+                                </fieldset>
+                         
+
+ 
+
+
+                            <div class="row" id="boxSize">
+                                    <fieldset>
+                                                  	<legend><h4>Items:</h4></legend>
+                                                <div class="large-3 medium-6 column ">
+                                                    <div class="ui-field-contain">
+                                                       <label for="box1">Size 1 <img src="img/size1.png" alt="One man should carry" title="One man should carry"></label><br /> 
+													  
+                                                       <input id="box1" data-mini="true" data-role="spinbox" type="text" value="0" min="0" data-options="{"type":"horizontal"}" name="box1" class="quoteFields" /> 
+													</div>
+                                                </div>
+                                                <div class="large-3 medium-6 column">
+												     <div class="ui-field-contain">
+                                                       <label for="box2">Size 2 <img src="img/size2.png" alt="One or 2 men should carry" title="One or 2 men should carry"></label><br />  
+                                                       <input data-mini="true" id="box2" data-role="spinbox" type="text" value="0" min="0" max="100" name="box2" class="quoteFields" /> 
+													 </div>
+                                                </div>
+                                                <div class="large-3 medium-6 column">
+												
+												     <div class="ui-field-contain">
+                                                       <label for="box3">Size 3 <img src="img/size3.png" alt="2 men should carry" title="2 men should carry"></label><br />  
+                                                       <input data-mini="true" id="box3" data-role="spinbox" type="text" value="0" min="0" max="100" name="box3" class="quoteFields" /> 
+													 </div>
+                                                 </div>
+                                                 <div class="large-3 medium-6 column">
+												     
+												     <div class="ui-field-contain">
+                                                        <label for="box4">Size 4 <img id="sizeImgBigger" src="img/size4.png" alt="2 or more men should carry" title="2 or more men should carry"></label><br />  
+                                                        <input data-mini="true" id="box4" name="box4" data-role="spinbox" type="text" value="0" min="0" max="100" class="quoteFields" /> 
+													 </div>
+                                                 </div>
+    
+                                    </fieldset>
+                             </div>
+                             <div class="row">
+                                    <div class="large-6 medium-6 column">
+									    <div class="ui-field-contain">
+                                            <fieldset>  
+                                            <legend><h4>Departure:</h4></legend>
+											
+                                            <label for="carPark1">Distance from car park to stair door (yards/meters)</label>
+											<div class="row">
+											   <div class="large-5 medium-12 small-12 column">
+                                                <input id="carPark1" data-mini="false" data-role="spinbox" type="text" class="short quoteFields" name="carPark1" value="3" />
+											  </div> 
+											  
+											  <div class="large-2 medium-12 small-12 column">
+											  <b>Floor</b>
+											  </div>
+											  <div class="large-5 medium-12 small-12 column">
+                                            
+                                               <input id="floor1" data-mini="false" data-role="spinbox" type="text" class="short quoteFields" name="floor1" value="0" />
+                                              </div>
+											</div>
+											</fieldset>
+                                        </div>											
+                                    </div>
+                                    <div class="large-6 medium-6 column">
+									    
+									    <div class="ui-field-contain"> 
+                                           <fieldset>   
+                                           <legend><h4>Arrival:</h4></legend> 
+                                           <label for="carPark2">Distance from car park to stair door (yards/meters)</label>
+										   <div class="row">
+										    <div class="large-5 medium-12 small-12 column">
+                                              <input id="carPark2" data-mini="false" data-role="spinbox" type="text" class="short quoteFields" name="carPark2" value="3" />
+										    </div>   
+										
+										    <div class="large-2 medium-12 small-12 column">
+											   <b>Floor</b>
+										    </div>
+										    <div class="large-5 medium-12 small-12 column">
+                                              <input id="floor2" data-mini="false" data-role="spinbox" type="text" class="short quoteFields" name="floor2" value="0" />
+											</div> 
+										   </div>
+                                           </fieldset>
+										</div>
+                                    </div>
+                             </div>
+                             
+                      </div> 
+               </div>    
+
+                <div class="large-3 medium-12 columns text-center" id="submitBar" style="padding-top:65px">
+				     <div style="width:250px;margin:0 auto;color: #18AF10;text-align:center;" id="results">
+                           <div id="totalBarField" style="display:none;">
+							<fieldset>
+                                    <legend>:::Total:::</legend>
+                                   	<div id="quoteResults"></div>
+	                        </fieldset>
+						   </div>	
+                           <iframe src="http://voting.first-jump.com/init.php?a=g&g=1418151092426&m=1&n=5&s=48&f=3.png&f_a=&f_b=&f_c=" allowtransparency="true" hspace="0" vspace="0" marginheight="0" marginwidth="0" frameborder="0" height="64" scrolling="no" width="243" id="reviews" style="margin-top:20px;"></iframe>
+					 </div>
+		            <div class="beforeQuote" style="margin-top:20px;">
+					 
+		              <h4>Additional customization </h4>
+                   	    <p>I will help man with a van</p>
+						
+					     <div class="row" style="text-align: center;">
+
+                           <div class="large-6 medium-6 small-6 column">
+	                        <b>Yes</b><input type="radio" name="helpManR" value="1" class="quoteFields">
+						   </div>
+					       <div class="large-6 medium-6 small-6 column">
+                	        <b>No</b><input type="radio" name="helpManR" value="2" class="quoteFields" checked>
+							<input type="hidden" name="helpMan" value="2" id="helpMan"
+	                       </div>
+						</div>
+    					<p>Items will be prepared outside the stair door prior move</p>
+						
+					     <div class="row" style="text-align: center;">
+
+                           <div class="large-6 medium-6 small-6 column">
+    	                     <b>Yes</b>
+		                     <input type="radio" value="1" name="propPrepR" class="quoteFields">
+						   </div>
+					       <div class="large-6 medium-6 small-6 column">
+           	                 <b>No</b>
+	                         <input type="radio" value="2" name="propPrepR" class="quoteFields" checked>
+							 <input type="hidden" value="2" name="propPrep" id="propPrep">
+                           </div>
+						</div>
+			
+	                  <div style="width:250px;margin:0 auto;color: #18AF10;text-align:center" id="results">
+                      
+                               <div  id="gAPIVal" class="">
+                                      <div id="gAPI"></div>
+                               </div>
+                              <div  id="gAPICost" class="">
+                             </div>
+                       </div> 
+					   <div class="row" style="text-align: center;">
+
+                                     <div class="large-6 medium-6 small-6 column">
+                                             <input type="radio" name="menR" value="man" class="quoteFields" checked="yes">
+                                             <img src="img/bodynew.png" alt="One man and van" title="one man and a van">
+                                     </div> 
+                                     <div class="large-6 medium-6 small-6 column">
+                                             <input type="radio" name="menR" value="men" class="quoteFields">
+                                             <img src="img/bodynew.png" alt="Two men and van" title="two men and a van">
+                                             <img src="img/bodynew.png" alt="Two men and van" title="two men and a van">
+											 <input type="hidden" name="men" value="man" id="men">
+                                     </div> 
+                             </div>
+                     </div>  
+        
+
+                </form>
+				<a class="button [secondary success alert] submitQuotes" style="display:none">Submit Quote</a>
+                </div>
+        
+</div>
+</div>
+
+<footer class="footer">
+       <p><a href="http://manandvanedinburgh.org.uk" title="copyright manandvanedinburgh.org.uk all rights reserved">
+Copyright &copy; 20012 - 2014. The Man And Van Edinburgh. All Rights Reserved.</a></p>
+       <p><a href="http://creativeviews.co.uk" title="Sergei Pavlov Online Portfolio" class="poweredBy">Web Design &amp; Development by Sergei Pavlov</a></p>
+</footer>
+
+</div>
+  <input type="hidden" id="formName">	
+
+
+  <script src="js/foundation.min.js"></script>
+  <script src="js/foundation/foundation.abide.js"></script>
+  <script src="js/foundation/foundation.topbar.js"></script>
+  <script>
+      $(document).foundation();
+    </script>
+	
+  <script type="text/javascript" src="js/jqm-spinbox.js"></script>
+  <script type="text/javascript">
+
+$(document).ready(function() {
+
+  $( "#address2" ).change(function(){
+  
+          if($( "#address1" ).val() > ""){
+    $( "#gAPI").html( "Calculating travel time..." );
+    activeQuote();
+     ajaxJson();
+	 }
+    });
+	  $( "#address1" ).change(function(){
+          if($( "#address2" ).val() > ""){
+		  $( "#gAPI").html( "Calculating travel time..." );
+		  activeQuote();
+		  ajaxJson();
+     
+	       }
+     });
+           $( ".quoteFields" ).change(function(){
+		  $( "#gAPI").html( "Calculating travel time..." );
+		  activeQuote();
+		  ajaxJson();
+	       
+    });
+
+		$("input[name=helpManR]:radio").bind( "change", function(event, ui) {
+           
+		   
+           $("#helpMan").val($(this).val());
+           activeQuote();
+           ajaxJson();
+       });
+	   	$("input[name=propPrepR]:radio").bind( "change", function(event, ui) {
+          
+		   
+           $("#propPrep").val($(this).val());
+	   activeQuote();
+           ajaxJson();
+       });
+	   	$("input[name=menR]:radio").bind( "change", function(event, ui) {
+           
+           $("#men").val($(this).val());
+           activeQuote()
+           ajaxJson();
+       });
+	   $("body").on('click', '.submitQuotes', function () {
+                $('html, body').animate({scrollTop:0}, 'slow');
+                $( ".beforeQuote" ).css( "display", "none");
+	        	$( "#afterQuote" ).css( "display", "block");
+	        	$(".submitQuotes").css("display","none");
+		        $( "#formName" ).val('#quoteSubmitForm'); 
+                        
+ });
+  $("body").on('click', '#submit_btn', function () {
+		  var proceed = true;
+               //simple validation at client's end
+              //loop through each field and we simply change border color to red for invalid fields       
+              $("#contact_form input[required=true], #contact_form textarea[required=true]").each(function(){
+             $(this).css('border-color',''); 
+             if(!$.trim($(this).val())){ //if this field is empty 
+                $(this).css('border-color','red'); //change border color to red   
+                proceed = false; //set do not proceed flag
+             }
+             //check invalid email
+             var email_reg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/; 
+             if($(this).attr("type")=="email" && !email_reg.test($.trim($(this).val()))){
+             $(this).css('border-color','red'); //change border color to red   
+             proceed = false; //set do not proceed flag              
+            }   
+        });
+       
+        if(proceed) //everything looks good! proceed...
+        {
+		  ajaxJson();
+         }
+		  });
+ function activeQuote(){
+  $( "#formName" ).val('#quoteForm');
+ }
+
+ function ajaxJson(){
+    
+         var ajaxForm = $($("#formName").val());
+   	$(ajaxForm).submit(ajaxJson);
+        $.ajax({
+                    type: "GET", /* the request's method: */
+                    url: "http://manandvanedinburgh.org.uk/qCalc.php",    /* the request's location: */
+                    data: ajaxForm.serialize(),/* the request's fields: */
+                    contentType: "application/json; charset=utf-8",  /* the request's content-type : */
+                    dataType: "json", /* the response's content-type: */
+                    success: function(json){ /* the callback function */
+                    
+                                 if(json.length > 0){
+                                           $.each(json, function(i, item){
+									var type = item.type;
+									
+						 if(type == 'error1'){ 
+                                                        $("#gApiError").html(item.addressError);
+					         }if(type === 'done'){
+							 
+						        	var  output = "<div class=\"successWrap\"><div class=\"success\">"+item.text+"</div></div>";
+							    $("#contact_form #contact_body").slideUp(); //hide form after success
+                                                            $("#contact_form #contact_results").hide().html(output).slideDown();	
+                                                            $( "#quoteResults" ).html("Total Removals Cost : &pound;"+item.totalPrice+"");
+							    $( "#submit_btn" ).css("display","none");
+							        
+						 }if(item.type == 'erroremail'){
+						 
+						 }else{
+								   
+							      var distanceKm = item.distance;
+                                                 var distanceR = 0.62137*distanceKm/1000;
+                                                 var time = item.time;
+                                                 if(item.timeValue > 30){
+                                                        var timeCost1R = item.timeValue/60/60*25*2;
+                                                        var timeCost2R = item.timeValue/60/60*35*2;
+                                                  }else{
+                                                        var timeCost1R = 25;
+                                                        var timeCost2R = 35;
+                                                  }
+                                                 var timeCost1 = Math.round(timeCost1R);
+                                                 var timeCost2 = Math.round(timeCost2R);
+                                                 var distance = Math.round(distanceR);
+                                                 $( "#gAPI" ).html("Drive Time Cost");
+                                                 $( "#gAPIVal").html( "Drive Time: "+time+" <br> Distance: "+distance+" miles" );
+                                                 $( "#gAPICost").html( "Drive Time Costs:<br />1 man: &pound;"+timeCost1+" <br> 2 men: &pound;"+timeCost2+"" );
+                                                 $( "#time" ).val(item.timeValue);
+		                                 $( "#gApiError" ).html("");
+					         $( "#quoteResults" ).html("Total Removals Cost : &pound;"+item.totalPrice+"");
+						 $( ".submitQuotes" ).css("display","block");
+						 $( ".submitQuotes" ).html("Submit Quote: £"+item.totalPrice+"");
+						 $( "#goBack" ).html("Quote: £"+item.totalPrice+" Go Back");	
+                                                 $( "#totalBarField" ).css("display","block");
+	        	                         $( "#totalPrice" ).remove();
+	        	                         $( "#hiddenResults" ).remove();
+						 $( '#contact_body' ).append('<input type="hidden" id="totalPrice" name="totalPrice" value="'+item.totalPrice+'">');
+	        	                         $( '#contact_body').append('<textarea name="hiddenResults" id="hiddenResults" style="visibility:hidden"  class="textarea-field" required="true">Address1 :: '+item.address1+' <br /> Address2 :: '+item.address2+' <br />Total Quote ::'+item.totalPrice+'<br />Size1 :: '+item.box1+' <br/> Size2 :: '+item.box2+' <br /> Size3 :: '+item.box3+' <br /> Size4 :: '+item.box4+' <br /> Floor1 :: '+item.floor1+' <br /> Floor2 :: '+item.floor2+' <br /> Car Park1 :: '+item.carPark1+' <br /> Car Park2 :: '+item.carPark2+' <br /> Extras :: Will Help '+item.help+' &amp; '+item.men+' &amp; Outside Prop '+item.propPrep+'</textarea>');
+                                                	
+                                             											  
+						        }
+		                            })
+                                 }
+		   }
+        })
+ }
+});
+
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35420532-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

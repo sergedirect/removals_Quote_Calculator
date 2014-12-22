@@ -1,0 +1,201 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+	<meta name="description" content="Use our contact form to make a formal request or to contact about an old query @ Man And Van || Contact US.">
+   <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/ui.css" />
+    
+    <link rel="stylesheet" href="css/app.css"  media="all"/>
+    <script src="js/vendor/modernizr.js"></script>
+</head>
+<body>
+ 
+<header>
+    <div class="row clearfix ">
+      <div class="large-6 medium-6 small-6 column">
+	     <div class="logo" style="left: 134.90625px;"></div>
+	  </div>
+      <div class="large-6 medium-6 small-6 column hide-for-medium-down" style="text-align:right;padding-top:30px">
+	      <div class="right topVan " style="">
+		          <img src="img/small-van.png" alt="Small removals van" title="small removals van">
+		  </div>
+		  <div class="right topVan" style="">
+		          <img src="img/large-van.png" al="Large removals van" title="large removals van">
+		  </div>
+	  </div>
+    </div>
+    <div class="contain-to-grid navMargin">	
+<nav class="top-bar" data-topbar="" role="navigation">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name show-for-medium-up">
+      <h1><a href="#">M &amp; V Edinburgh || Removals</a></h1>
+    </li>
+	<li class="name show-for-small-only">
+	 <a href="tel:07827 019139"><img src="img/phone.png" alt="" style="width:40px;margin-left:30px"></a>
+	</li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href=""><span>Menu</span></a></li>
+	
+  </ul>
+
+  
+<section class="top-bar-section">
+    <ul class="left">
+	
+      <li class="divider"></li>
+      <li class=""><a href="./index.html" title="Man and Van Edinburgh Home Page">Home</a></li>
+
+      
+      <li class="divider"></li>
+	  <li class=""><a href="./contact.html" title="Man and Van Edinburgh Contact Page">Contact Us</a></li>
+
+      
+      <li class="divider"></li>
+    </ul>
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="divider"></li>
+      <li><a href="removals-quote-calculator.html" title="Removals Quote Calculator">Quote Calculator</a></li>
+    </ul>
+  </section>
+  </nav>
+    </div>
+</header>
+   
+ <div class="row">
+                
+                <div class="large-8 medium-8 columns text-justify padding30">
+						   <div class="" id="contact_form">
+					              <div id="contact_results"></div>
+                                  <div id="contact_body">
+								  
+				           <h2 class="" style="font-size:20px">Please Use our contact form if you have any request.</h2>
+                                       <label><span>Name <span class="required">*</span></span>
+                                        <input type="text" name="name" id="name" required="true" class="input-field"/>
+                                       </label>
+                                       <label><span>Email <span class="required">*</span></span>
+                                        <input type="email" name="email" required="true" class="input-field" id="email"/>
+                                       </label>
+                                       <label><span>Phone</span>
+                                        <input type="text" name="phone2" placeholder="Phone Number" maxlength="20"  required="true" class="tel-number-field long" />      </label>
+                                       </label>
+                                       <label for="field5"><span>Message <span class="required">*</span></span>
+                                       <textarea name="message" id="message" class="textarea-field" required="true"></textarea>
+                                       </label>
+									   
+									  
+                                       <label>
+                                       <span>&nbsp;</span><input type="submit" id="submit_btn" class="button" value="Submit" />
+                                       </label>
+				
+			                   	</div>
+						   </div>
+				</div>
+               
+
+                <div class="large-4 medium-4 columns padding30" >
+                    <img src="img/index-right-banner.png" alt="instant man with a van and removals quote banner" title="Instant Quote">
+					      <h2 class="mediumText">Quote Calculator</h2>
+				     <p>Use our <a href="./removals-quote-calculator.html" title="quote calculator">quote calculator for removals &amp; man with a van services</a></p>
+					 <p>It's supper easy and just takes a few minutes. We use Google Maps Technology to generate instant results for local moves</p>
+                     <!-- Place this tag where you want the widget to render. -->
+                     <div class="text-center">
+					     <div class="g-page" data-width="213" data-href="//plus.google.com/112151526890223492426" data-showcoverphoto="false" data-rel="publisher"></div>
+			         </div>
+			   </div>
+        
+</div>
+<footer class="footer">
+       <p><a href="http://manandvanedinburgh.org.uk" title="copyright manandvanedinburgh.org.uk all rights reserved">
+Copyright &copy; 20012 - 2014. The Man And Van Edinburgh. All Rights Reserved.</a></p>
+       <p><a href="http://creativeviews.co.uk" title="Sergei Pavlov Online Portfolio" class="poweredBy">Web Design &amp; Development by Sergei Pavlov</a></p>
+</footer>
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    
+  <script src="js/foundation/foundation.abide.js"></script>
+  
+  <script src="js/foundation/foundation.topbar.js"></script>
+
+	
+
+
+    <script type="text/javascript">
+	  $("#submit_btn").click(function() { 
+        var proceed = true;
+        //simple validation at client's end
+        //loop through each field and we simply change border color to red for invalid fields       
+        $("#contact_form input[required=true], #contact_form textarea[required=true]").each(function(){
+            $(this).css('border-color',''); 
+            if(!$.trim($(this).val())){ //if this field is empty 
+                $(this).css('border-color','red'); //change border color to red   
+                proceed = false; //set do not proceed flag
+            }
+            //check invalid email
+            var email_reg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/; 
+            if($(this).attr("type")=="email" && !email_reg.test($.trim($(this).val()))){
+                $(this).css('border-color','red'); //change border color to red   
+                proceed = false; //set do not proceed flag              
+            }   
+        });
+       
+        if(proceed) //everything looks good! proceed...
+        {
+            //get input field values data to be sent to server
+        
+            
+	  $.post('http://manandvanedinburgh.org.uk/contact.php', {
+	           'user_name'     : $('input[name=name]').val(), 
+                'user_email'    : $('input[name=email]').val(), 
+               // 'country_code'  : $('input[name=phone1]').val(), 
+                'phone_number'  : $('input[name=phone2]').val(), 
+                'msg'           : $('textarea[name=message]').val()
+	  })
+    .done( function(response) { 
+   
+         
+                if(response.type == 'error'){ //load json data from server and output message     
+                    output = '<div class="error">'+response.text+'</div>';
+					
+                }else{
+				
+                    output = '<div class="successWrap"><div class="success">'+response+'</div></div>';
+                    //reset values in all input fields
+                    $("#contact_form  input[required=true], #contact_form textarea[required=true]").val(''); 
+                    $("#contact_form #contact_body").slideUp(); //hide form after success
+                }
+                $("#contact_form #contact_results").hide().html(output).slideDown();
+            }, 'json')
+			 .fail( function(xhr, textStatus, errorThrown) {
+        alert(xhr.responseText);
+    });
+        }
+    });
+    
+    //reset previously set border colors and hide all message on .keyup()
+    $("#contact_form  input[required=true], #contact_form textarea[required=true]").keyup(function() { 
+        $(this).css('border-color',''); 
+        $("#result").slideUp();
+    });
+	
+	</script>
+  
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script src="js/ui.js" type="text/javascript"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35420532-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
